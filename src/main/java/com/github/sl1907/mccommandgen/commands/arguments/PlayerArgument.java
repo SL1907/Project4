@@ -1,21 +1,25 @@
 package com.github.sl1907.mccommandgen.commands.arguments;
 
-public class PlayerArgument extends Argument {
+import com.github.sl1907.mccommandgen.commands.types.PlayerType;
 
-    private Object value;
+public class PlayerArgument extends Argument<PlayerType> {
 
-    public PlayerArgument(Object value) {
-        super("Player", value);
+    private final PlayerType value;
+
+    public PlayerArgument(PlayerType value) {
+        super(value);
         this.value = value;
     }
 
     @Override
-    public String getName() {
-        return "Player";
+    public String toString() {
+        return "PlayerArgument{" +
+                "value=" + value +
+                '}';
     }
 
     @Override
-    public Object getValue() {
+    public PlayerType getValue() {
         return this.value;
     }
 }

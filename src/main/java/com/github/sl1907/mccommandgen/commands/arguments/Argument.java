@@ -1,24 +1,16 @@
 package com.github.sl1907.mccommandgen.commands.arguments;
 
-public abstract class Argument {
+public abstract class Argument<T> {
 
-    private String name;
-    private Object value;
+    private T value;
 
-    public Argument(String name, Object value) {
-        this.name = name;
+    public Argument(T value) {
         this.value = value;
     }
 
-    public abstract String getName();
+    public abstract T getValue();
 
-    public abstract Object getValue();
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setValue(Object value) {
+    public void setValue(T value) {
         this.value = value;
     }
 }
